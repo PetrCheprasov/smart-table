@@ -1,0 +1,1 @@
+(https://github.com/PetrCheprasov/smart-table.git)
