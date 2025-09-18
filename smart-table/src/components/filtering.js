@@ -11,8 +11,13 @@ export function initFiltering(elements) {
     }
 
     const applyFiltering = (query, state, action) => {
+            if (action && action.name === 'clear') {
+    const input = action.closest('label').querySelector('input');
+            input.value = '';
+            state[action.dataset.field] = '';
+        }
 // @todo: #4.5 — отфильтровать данные, используя компаратор
-        const filter = {};
+    const filter = {};
         Object.keys(elements).forEach(key => {
             if (elements[key]) {
                 if (['INPUT', 'SELECT'].includes(elements[key].tagName) && elements[key].value) { // ищем поля ввода в фильтре с непустыми данными

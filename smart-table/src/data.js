@@ -13,8 +13,8 @@ export function initData(sourceData) {
 const mapRecords = (data) => data.map(item => ({
     id: item.receipt_id,
     date: item.date,
-    seller: sellers[item.seller_id],
     customer: customers[item.customer_id],
+    seller: sellers[item.seller_id],
     total: item.total_amount
 }));
 
